@@ -9,7 +9,7 @@ import { ListRestoComponent } from './list-resto/list-resto.component';
 import { LoginRestoComponent } from './login-resto/login-resto.component';
 import { RegisterRestoComponent } from './register-resto/register-resto.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 @NgModule({
@@ -27,6 +27,7 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFileUploaderModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

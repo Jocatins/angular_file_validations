@@ -7,14 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sphinx-resto';
-  public name = 'Joca';
-  public myId = 'testId';
 
   servers = [];
   fileSize;
   file;
 
   fileSelected($event) {
+    //Property 'files' does not exist on type 'HTMLElement'
     let file = $event.target.files[0];
     this.file = file;
 
@@ -54,4 +53,11 @@ export class AppComponent {
   //   const position = id + 1;
   //   this.servers.splice(position, 1);
   // }
+}
+if (file) {
+  let fileSize = 0;
+  if (file.size > 100 * 1024) this.fileSize = 'file size exceeded';
+  else
+    this.fileSize =
+      (Math.round((file.size * 100) / (1024 * 1024)) / 100).toString() + 'MB';
 }

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" routerLink="">Gypsy</a>
+  <a class="navbar-brand" routerLink="">Jenny Stores</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -12,30 +12,35 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="add"
-          >Add Resto <span class="sr-only">(current)</span></a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="">List Resto</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="update">Update Resto</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="register">Register User</a>
-      </li>
-    </ul>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="add">Add new Restaurant</a>
+      <a class="nav-item nav-link" routerLink="">List of Restaurants</a>
+      <a class="nav-item nav-link" routerLink="login">Login</a>
+      <a class="nav-item nav-link" routerLink="register">Register</a>
+      <a class="nav-item nav-link" routerLink="update">Update</a>
+    </div>
   </div>
 </nav>
 
-<angular-file-uploader [config]="afuConfig"> </angular-file-uploader>
+<div>
+  <input
+    type="file"
+    name="fileToUpload"
+    id="fileToUpload"
+    (change)="fileSelected($event)"
+  />
+  <span></span>
+</div>
+<p>FileName - {{ file?.name }}</p>
+<p>FileSize - {{ fileSize }}</p>
+<p>FileType - {{ file?.type }}</p>
+
+<div>Hello {{ name }}</div>
+<input type="text" value="Titan" [id]="myId" />
 
 <div class="container">
   <router-outlet></router-outlet>
   <footer>
-    <p>Register with us</p>
+    <p>Register with us Today</p>
   </footer>
 </div>
